@@ -512,7 +512,7 @@ export class Encounter {
 
       const content = innateSpellcasting.Content;
 
-      const innatePattern = /(\d)\/day/gim;
+      const innatePattern = /(\d+)\/day/gim;
       while ((match = innatePattern.exec(content))) {
         notes.push(`[${match[1]}/${match[1]}]`);
       }
@@ -522,7 +522,7 @@ export class Encounter {
       notes.push("Legendary Actions [3/3]");
     }
 
-    const perDayPattern = /\((\d)\/day\)/gim;
+    const perDayPattern = /\((\d+)\/day\)/gim;
 
     statBlock.Traits.filter(t => t.Name.match(perDayPattern)).forEach(t =>
       notes.push(`${t.Name.replace(perDayPattern, "[$1/$1]")}`)
@@ -540,6 +540,11 @@ export class Encounter {
     statBlock.Actions.filter(t => t.Name.includes("(Recharge")).forEach(t =>
       notes.push(`${t.Name.replace(/\(.*?\)/, "")}[1/1]`)
     );
+
+    // Add in Notes the content of the description section from the statblock (when the content in [] is in Notes, it is processed correctly ...)
+    notes.push(statBlock.Description)
+    // Empty the description to avoid the rendering of a unprocessed duplicate of the description content
+    statBlock.Description = ""
 
     return notes.join("\n\n");
   }

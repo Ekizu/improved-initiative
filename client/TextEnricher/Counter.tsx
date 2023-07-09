@@ -36,7 +36,7 @@ export function CounterOrBracketedText(
       }
     };
 
-    if (maximum <= 9) {
+    if (maximum <= 99) {
       return <BeanCounter {...counterProps} />;
     }
 

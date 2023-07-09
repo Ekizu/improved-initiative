@@ -148,10 +148,11 @@ export class Combatant {
   }
 
   public InitiativeBonus = ko.computed(() => {
-    const dexterityModifier = this.Encounter.Rules.GetModifierFromScore(
-      this.StatBlock().Abilities.Dex
-    );
-    return dexterityModifier + (this.StatBlock().InitiativeModifier || 0);
+    //const dexterityModifier = this.Encounter.Rules.GetModifierFromScore(
+    //  this.StatBlock().Abilities.Dex
+    //);
+    //return dexterityModifier + (this.StatBlock().InitiativeModifier || 0);
+    return this.StatBlock().InitiativeModifier || 0;
   });
 
   public ConcentrationBonus = ko.computed(() =>
