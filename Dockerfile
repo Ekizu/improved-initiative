@@ -1,4 +1,4 @@
-FROM node:carbon
+FROM node:12
 ARG NODE_ENV
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH=$PATH:/home/node/.npm-global/bin
@@ -9,7 +9,7 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-RUN grunt --no-color copy
+RUN npx grunt
 
 ENV NODE_ENV=${NODE_ENV}
 RUN if [ "$NODE_ENV" = "production" ]; then grunt --no-color build_min; else grunt --no-color build_dev; fi
