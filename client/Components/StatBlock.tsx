@@ -28,7 +28,8 @@ export function StatBlockComponent(props: StatBlockProps) {
     { name: "Damage Resistances", data: statBlock.DamageResistances },
     { name: "Damage Immunities", data: statBlock.DamageImmunities },
     { name: "Condition Immunities", data: statBlock.ConditionImmunities },
-    { name: "Languages", data: statBlock.Languages }
+    { name: "Languages", data: statBlock.Languages },
+    { name: "Tools", data: statBlock.Tools }
   ];
 
   const powerTypes = [

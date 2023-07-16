@@ -47,6 +47,7 @@ export interface StatBlock extends Listable {
   Skills: NameAndModifier[];
   Senses: string[];
   Languages: string[];
+  Tools: string[];
   Challenge: string;
   Traits: NameAndContent[];
   Actions: NameAndContent[];
@@ -114,6 +115,7 @@ export namespace StatBlock {
     Skills: [],
     Senses: [],
     Languages: [],
+    Tools: [],
     Challenge: "",
     Traits: [],
     Actions: [],

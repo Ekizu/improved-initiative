@@ -173,7 +173,8 @@ export class StatBlockEditor extends React.Component<
         "DamageResistances",
         "DamageImmunities",
         "ConditionImmunities",
-        "Languages"
+        "Languages",
+        "Tools"
       ].map(keywordType => (
         <div key={keywordType} className="c-statblock-editor__keywords">
           <KeywordFields api={api} keywordType={keywordType} />

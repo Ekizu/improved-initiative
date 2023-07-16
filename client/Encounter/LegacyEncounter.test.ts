@@ -19,6 +19,7 @@ function makev0_1StatBlock() {
     Skills: [],
     Senses: [],
     Languages: [],
+    Tools: [],
     Challenge: "",
     Traits: [],
     Actions: [],
