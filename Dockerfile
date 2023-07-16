@@ -9,6 +9,7 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
+RUN npm run postinstall
 RUN npx grunt
 
 ENV NODE_ENV=${NODE_ENV}
