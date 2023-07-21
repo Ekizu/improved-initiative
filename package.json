@@ -117,7 +117,7 @@
     "socket.io-client": "^4.5.0"
   },
   "scripts": {
-    "postinstall": "cp -r ./node_modules/@fortawesome/fontawesome-free/webfonts/ ./public/webfonts/",
+    "postinstall": "cp -r ./node_modules/@fortawesome/fontawesome-free/webfonts/ ./public/",
     "build": "grunt build_min",
     "dev": "grunt",
     "start": "node server/server.js",
